@@ -1,7 +1,8 @@
 import os as os
 import zipfile as zpf
+import sys
 
-pathtoBooks = "/import/linux/home1/avanroi1/projGutenburg/books.NOBACKUP/allBooks/"
+pathtoBooks = sys.argv[1]
 
 for x in os.listdir(pathtoBooks):
     if(not(x[-6:]=="-8.zip") and not (x == "ASCII")):

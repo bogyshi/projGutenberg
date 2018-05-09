@@ -1,0 +1,90 @@
+Project Gutenberg project
+Spring 2018
+README FILE
+
+Due Date: 05/08/18
+Submission Date: 05/08/18	
+Author(s): Alexander Van Roijen
+e-mail(s): avanroi1@binghamton.edu
+
+Github:
+https://github.com/bogyshi/projGutenberg
+
+PERCENT COMPLETE:
+83%
+
+PARTS THAT ARE NOT COMPLETE:
+part 5
+
+BUGS:
+1
+Dates that have an improper format are ignored, could be fixed to include the only information available
+
+FILES:
+exploration/main.py
+exploration/book.py
+logistics/moveBooks.py
+
+NOTES:
+All books were retrieved using the following command.
+wget -w 1 -m -H "http://www.gutenberg.org/robot/harvest?filetypes[]=txt"
+
+Files were then adjusted using the two scripts present in the logistics directory.
+First moveBooks, then unzipBooks.
+unzipBooks.py assumes a directory titles "ASCII" exists in the same directory as to where the zips are stored.
+
+My tests were run on 1800+ txt files
+
+My solution to the "Most dialogue" is multi faceted and imperfect. I tried several different heurisitcs.
+
+The single and double quote captures were my first thought. This failed quickly. Different languages such as dutch and french
+use them a lot for their grammars.
+
+The most promising results are using the New Line Ratio(NLR), which represent the number of blank lines to the total number of lines
+A high ratio means the document follows a structure similar to most scripts/plays, which contain a lot of dialogue.
+
+FUTURE WORK:
+Improve part 5 by using language heuristics, ex "he said ...", or in french "--"..., which indicates dialogue from time to time
+
+TO RUN:
+python main.py PATH_TO_FILES
+
+SAMPLE OUTPUT:
+The average release date is: 2004
+The most common release date is: 2004 4 3
+The number of books with the word truth in it at least 3 times: 1141
+Ratio of english to non english books is: 0.887609649123
+Total number of books checked books checked:1824
+
+Longest book: Title: Chromosome Number 1
+Gutenberg ID: 11775
+Language: FASTA
+Length (in characters): 262749756
+Gutenberg Release Date: 2004 3 26
+
+Book with the highest NLR is:
+Title: Les Demi-Vierges
+Gutenberg ID: 11747
+Language: French
+Length (in characters): 424847
+Gutenberg Release Date: 2004 3 28
+
+Book with the highest character count w/ single quotes is:
+Title: Le Cote de Guermantes
+Gutenberg ID: 12999
+Language: French
+Length (in characters): 466657
+Gutenberg Release Date: 2004 7 23
+
+Book with the highest character count w/ double quotes is:
+Title: Le Cote de Guermantes
+Gutenberg ID: 12999
+Language: French
+Length (in characters): 466657
+Gutenberg Release Date: 2004 7 23
+
+
+BIBLIOGRAPHY:
+https://stackoverflow.com/questions/3418050/month-name-to-month-number-and-vice-versa-in-python?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+MISCELLANEOUS:
